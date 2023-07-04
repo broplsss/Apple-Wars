@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Apple Wars</title>
+    <script src="https://unpkg.com/kaboom@2000.1.6/dist/kaboom.js"></script>
+  <link href="index.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <div id="scripts"></div>
+  <script src="data/bullets.js"></script> 
+  <script src="data/enemies.js"></script> 
+  <script src="data/game.js"></script> 
+  <script src="data/shop.js"></script> 
+ 
+  <div id="theGoodStuff"></div>
+
+<div id="cheats">
+  <div id="cheatsButCooler"></div>
+</div>
+
+<div id="majikIsReal"></div>
+
+<p class="error">Apple Wars only works in a new tab :(</p>
+<a href="https://apple-wars.mrvoo.repl.co" target="_blank" class="error">Click to open in a new window</a>
+<img src="sprites/apple.png" class="error">
+
+<script>
+  const theBadStuff = '<button onclick="toggleMoreStuff()" id="shamelessSelfPromotion">?</button>';
+
+  const theGoodStuff = `<button onclick="toggleMoreStuff()" id="shamelessSelfPromotion">?</button>
+      
+    <div id="moreStuff">
+    <a href="/extras/tutorial" style="color:dimgray;">
+        How To Play
+    </a><br>
+    <a href="/extras/docs" style="color:dimgray;">
+        Documentation
+    </a><br>
+    <a href="https://replit.com/@MrVoo/Apple-Wars?v=1" target="_blank">
+        Send Feedback
+    </a><br>
+    <a href="https://docs.replit.com/legal-and-security-info/licensing-info" target="_blank">
+        Replit's License
+    </a><br>
+    <a href="https://mrvoo.repl.co" target="_blank">
+        More projects
+    </a>
+    </div>
+  `;
+
+  // <a onclick="go('save')" style="color:dimgray;">
+  //   Get Save Code
+  // </a><br>
+  
+  const msArray = [theBadStuff, theGoodStuff]; // i dont know anymore
+  var msMode = 0;
+  
+  function toggleMoreStuff() {
+    if (msMode == 0) {
+      msMode = 1;
+    } else {
+      msMode = 0;
+    };
+    document.getElementById('theGoodStuff').innerHTML = msArray[msMode];
+  };
+
+  if (window == window.top) {
+    let err = document.getElementsByClassName('error');
+    err[2].outerHTML = '';
+    err[1].outerHTML = '';
+    err[0].outerHTML = '';
+    //err[0].innerHTML = 'Loading...';
+    
+    let links = [
+      'menu.js',
+      'game.js',
+      'settings.js',
+      'shop.js',
+      'save.js',
+      'majik.js'
+    ];
+    for (let i = 0; i < links.length; i++) {
+      setTimeout(() => {
+      let script = document.createElement('script');
+      script.src = links[i];
+      document.getElementsByTagName('head')[0].appendChild(script);
+      }, 500+
+         i*10+
+         Math.min(i,1) * 100);
+    };
+  };
+</script>
+</body>
+
+</html>

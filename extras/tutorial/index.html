@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial - Apple Wars</title>
+  <link rel="stylesheet" type="text/css" href="tutorial.css"></link>
+
+</head>
+  
+<body>
+
+<img src="/sprites/apple.png" id="background"></img>
+
+<a href="/">Back</a>
+
+<h1 style="margin-top: 50px;">Basics</h1>
+  
+  <h2>With Mouse</h2>
+
+    <p>Look around with your mouse.</p>
+    <p>Hold down to move towards your pointer.</p>
+    <p>Shoot with the F key, and leave a game with A.</p>
+  
+  <h2>On Touchscreen</h2>
+
+    <p>Hold down to change direction and move towards your pointer.</p>
+    <p>Shoot with the <img src="/sprites/shootButton.png" alt="shoot">
+button, and leave a game with <img src="/sprites/quitButton.png" alt="quit">.</p>
+
+
+
+
+
+<h1>Gameplay</h1>
+  
+  <h2>Poison</h2>
+
+    <p>Some bullets can poison the enemy, such as cherry pits.</p>
+    <p>When poisoned, you take a decreasing amount of damage until the effect wears off.</p>
+
+  <h2>Explosives</h2>
+
+    <p>Some bullets explode on impact, including the pear missile.</p>
+    <p>When something explodes, it deals extra damage to surrounding apples, and to the main target.</p>
+
+  <h2>Splitting</h2>
+
+    <p>A few bullets split into more bullets on impact, like the raspberry.</p>
+    <p>The fragments go off in all directions, and always do less damage than whatever they came from.</p>
+    <p>When a watermelon splits, the watermelon slices that come from it also split on impact.</p>
+
+  <h2>Winning</h2>
+
+    <p>One full game takes about one and a half minutes, with the enemies spawning faster and faster as you get closer to the end.</p>
+    <p>The last 20 seconds stop increasing in difficulty. Bosses don't spawn, but there are over five new enemies every second.</p>
+
+
+
+  
+  
+<h1>Shopping</h1>
+  
+  <h2>Bullets</h2>
+
+    <p>If the box under the icon is gray and has a price on it, you haven't bought it yet.</p>
+    <p>If the item has the unknown icon (gray apple with a ?), then you have to buy something else to reveal this bullet.</p>
+    <p>Once bought, the bullet will either have a button saying EQUIP or EQUIPPED. Equipped means this is the bullet you're currently using.</p>
+
+  <h2>Upgrades</h2>
+
+    <p>The green bar behind the price - if any - represents how many levels of the upgrade you bought.</p>
+    <p>The upgrades do all sorts of things, from increasing damage to giving you poison resistance.</p>
+
+
+
+
+
+
+<h1>Options</h1>
+  
+  <h2>Settings</h2>
+
+    <p>All of the settings are pretty self explanitory. Change them by clicking the switch button.</p>
+
+  <h2>Wipe Save</h2>
+
+    <p>Clicking this will send you to a confirmation screen.</p>
+    <p>If you click the apple fast enough your progress will be destroyed... surprise!</p>
+
+
+<h3 style="color:black;margin-top:400px;">e</h3>
+
+
+
+  
+<script>
+  var a = 0;
+  setInterval(() => {
+    a++;
+    document.getElementById('background').style.transform = 
+    `translate(-50%, -50%) rotate(${a}deg)`;
+  }, 50)
+</script>
+  
+</body>
+</html>
